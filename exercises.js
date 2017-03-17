@@ -60,18 +60,30 @@ function newUser(name, email, password) {
 function hasEmail(user) {
   //return true if the user has a value for the property 'email'
   //otherwise return false
+  if(user.email === '' || user.email === undefined) {
+    return false;
+  }
+  return true;
 }
 
 function hasProperty(object, property) {
   //return true if the object has the value of the property argument
   //property is a string
   //otherwise return false
+  if(object[property] === '' || object[property] === undefined) {
+    return false;
+  }
+  return true;
 }
 
 function verifyPassword(user, password) {
   //check to see if the provided password matches the password property on the user object
   //return true if they match
   //otherwise return false
+  if (user.password === password) {
+    return true;
+  }
+  return false;
 }
 
 function updatePassword(user, newPassword) {
